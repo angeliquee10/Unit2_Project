@@ -1,5 +1,5 @@
 public class Methods {
-    public static int score(String finalMessage)
+    public static int score(String finalMessage, int consonantScore, int vowelScore, int punctuationScore)
     {
         finalMessage = finalMessage.toLowerCase();
         int score = 0;
@@ -9,15 +9,15 @@ public class Methods {
             current = finalMessage.substring(i, i + 1);
             if (current.equals("a") | current.equals("e") | current.equals("i") | current.equals("o") | current.equals("u"))
             {
-                score += 5;
+                score += vowelScore;
             }
             else if (current.equals(".") | current.equals("!"))
             {
-                score += 2;
+                score += punctuationScore;
             }
             else
             {
-                score ++;
+                score += consonantScore;
             }
 //            System.out.println(score);
         }

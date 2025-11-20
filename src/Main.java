@@ -24,8 +24,9 @@ public class Main {
         System.out.print("Please enter your name: ");
         String name = scan.nextLine();
         System.out.println("Welcome " + name + "! Let us tell your fortune...");
-        System.out.println("First pick a number  1 or 2");
+        System.out.print("First pick a number  1 or 2... ");
         int round1 = scan.nextInt();
+        scan.nextLine();
         // 1 and 2 will have 2 separate question choices, i will then according to the number chosen, will use random to pick one of the 2 questions
         if (round1 == 1)
         {
@@ -36,18 +37,30 @@ public class Main {
                 System.out.print("Next pick left or right: ");
                 String round3 = scan.nextLine().toLowerCase();
                 if (round3.equals("left"))
-                {}
+                {
+                    System.out.println("Your fortune is...");
+                    System.out.println(fortune1 + "1");
+                }
                 else
-                {}
+                {
+                    System.out.println("Your fortune is...");
+                    System.out.println(fortune2 + "2");
+                }
             }
             else
             {
                 System.out.print("Next pick left or right: ");
                 String round3 = scan.nextLine().toLowerCase();
                 if (round3.equals("left"))
-                {}
+                {
+                    System.out.println("Your fortune is...");
+                    System.out.println(fortune3 + "3");
+                }
                 else
-                {}
+                {
+                    System.out.println("Your fortune is...");
+                    System.out.println(fortune4 + "4");
+                }
             }
         }
         else
@@ -59,20 +72,37 @@ public class Main {
                 System.out.print("Next pick left or right: ");
                 String round3 = scan.nextLine().toLowerCase();
                 if (round3.equals("left"))
-                {}
+                {
+                    System.out.println("Your fortune is...");
+                    System.out.println(fortune5 + "5");
+                }
                 else
-                {}
+                {
+                    System.out.println("Your fortune is...");
+                    System.out.println(fortune6 + "6");
+                }
             }
             else
             {
                 System.out.print("Next pick left or right: ");
                 String round3 = scan.nextLine().toLowerCase();
                 if (round3.equals("left"))
-                {}
+                {
+                    System.out.println("Your fortune is...");
+                    System.out.println(fortune7 + "7");
+                }
                 else
-                {}
+                {
+                    System.out.println("Your fortune is...");
+                    System.out.println(fortune8 + "8");
+                }
             }
         }
+
+        System.out.println("Now... time to determine your score...");
+        int consonantPoints = (int) ((Math.random() * 3) + 1);
+        int punctuationPoints = (int) ((Math.random() * 4) + 1);
+        int vowelPoints = (int) ((Math.random() * 10) + 1);
 
     }
 }
