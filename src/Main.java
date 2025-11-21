@@ -8,16 +8,16 @@ public class Main {
 //        System.out.println(Methods.score(message));
 
         // below are going to be all the final messages/fortunes
-        String fortune1 = "";
-        String fortune2 = "";
-        String fortune3 = "";
-        String fortune4 = "";
-        String fortune5 = "";
-        String fortune6 = "";
-        String fortune7 = "";
-        String fortune8 = "";
+        String fortune1 = "You will have a good day!";
+        String fortune2 = "You will have a bad day...";
+        String fortune3 = "I see sunshine and rainbows in your future!";
+        String fortune4 = "Good luck! You're going to need it...";
+        String fortune5 = "Your dreams will come true!";
+        String fortune6 = "Stormy clouds coming your way...";
+        String fortune7 = "Maybe save that bucket list for later...";
+        String fortune8 = "Today will be a productive day!";
 
-
+        String message;
 
         Scanner scan = new Scanner(System.in);
 
@@ -27,7 +27,7 @@ public class Main {
         System.out.print("First pick a number  1 or 2... ");
         int round1 = scan.nextInt();
         scan.nextLine();
-        // 1 and 2 will have 2 separate question choices, i will then according to the number chosen, will use random to pick one of the 2 questions
+        // below I am asking the questions and will give the user a fortune according to the responses they gave
         if (round1 == 1)
         {
             System.out.print("Next pick red or orange: ");
@@ -39,12 +39,14 @@ public class Main {
                 if (round3.equals("left"))
                 {
                     System.out.println("Your fortune is...");
-                    System.out.println(fortune1 + "1");
+                    message = fortune1;
+                    System.out.println(fortune1);
                 }
                 else
                 {
                     System.out.println("Your fortune is...");
-                    System.out.println(fortune2 + "2");
+                    message = fortune2;
+                    System.out.println(fortune2);
                 }
             }
             else
@@ -54,12 +56,14 @@ public class Main {
                 if (round3.equals("left"))
                 {
                     System.out.println("Your fortune is...");
-                    System.out.println(fortune3 + "3");
+                    message = fortune3;
+                    System.out.println(fortune3);
                 }
                 else
                 {
                     System.out.println("Your fortune is...");
-                    System.out.println(fortune4 + "4");
+                    message = fortune4;
+                    System.out.println(fortune4);
                 }
             }
         }
@@ -74,12 +78,14 @@ public class Main {
                 if (round3.equals("left"))
                 {
                     System.out.println("Your fortune is...");
-                    System.out.println(fortune5 + "5");
+                    message = fortune5;
+                    System.out.println(fortune5);
                 }
                 else
                 {
                     System.out.println("Your fortune is...");
-                    System.out.println(fortune6 + "6");
+                    message = fortune6;
+                    System.out.println(fortune6);
                 }
             }
             else
@@ -89,12 +95,14 @@ public class Main {
                 if (round3.equals("left"))
                 {
                     System.out.println("Your fortune is...");
-                    System.out.println(fortune7 + "7");
+                    message = fortune7;
+                    System.out.println(fortune7);
                 }
                 else
                 {
                     System.out.println("Your fortune is...");
-                    System.out.println(fortune8 + "8");
+                    message = fortune8;
+                    System.out.println(fortune8);
                 }
             }
         }
@@ -103,6 +111,10 @@ public class Main {
         int consonantPoints = (int) ((Math.random() * 3) + 1);
         int punctuationPoints = (int) ((Math.random() * 4) + 1);
         int vowelPoints = (int) ((Math.random() * 10) + 1);
-
+        System.out.println("The consonants are worth: " + consonantPoints + " points");
+        System.out.println("The vowels are worth: " + vowelPoints + " points");
+        System.out.println("Punctuation is worth: " + punctuationPoints + " points");
+        int score = Methods.score(message, consonantPoints, vowelPoints, punctuationPoints);
+        System.out.println("Your score is :" + score);
     }
 }

@@ -3,7 +3,7 @@ public class Methods {
     {
         finalMessage = finalMessage.toLowerCase();
         int score = 0;
-        String current = "";
+        String current;
         for (int i = 0; i < finalMessage.length(); i++)
         {
             current = finalMessage.substring(i, i + 1);
@@ -14,6 +14,10 @@ public class Methods {
             else if (current.equals(".") | current.equals("!"))
             {
                 score += punctuationScore;
+            }
+            else if (current.equals(" "))
+            {
+                score += 0;
             }
             else
             {
