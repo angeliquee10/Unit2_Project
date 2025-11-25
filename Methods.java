@@ -1,25 +1,34 @@
 public class Methods {
-    public static int score(String finalMessage)
+    public static int score(String finalMessage, int consonantScore, int vowelScore, int punctuationScore, String specialChar, int specialPoints)
     {
         finalMessage = finalMessage.toLowerCase();
         int score = 0;
-        String current = "";
+        String current;
         for (int i = 0; i < finalMessage.length(); i++)
         {
             current = finalMessage.substring(i, i + 1);
-            if (current.equals("a") | current.equals("e") | current.equals("i") | current.equals("o") | current.equals("u"))
+            if (current.equals(specialChar))
             {
-                score += 5;
+                score += specialPoints;
+            }
+            else if (current.equals("a") | current.equals("e") | current.equals("i") | current.equals("o") | current.equals("u"))
+            {
+                score += vowelScore;
             }
             else if (current.equals(".") | current.equals("!"))
             {
-                score += 2;
+                score += punctuationScore;
+            }
+            else if (current.equals(" "))
+            {
+                score += 0;
             }
             else
             {
-                score ++;
+                score += consonantScore;
             }
-//            System.out.println(score);
+//          use this to test if the score is being added correctly...
+//          System.out.println(score);
         }
         return score;
     }
